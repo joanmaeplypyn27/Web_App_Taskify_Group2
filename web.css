@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 360px;
+}
+
+input, button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+#addTask {
+    background: rgb(29, 152, 168);
+    color: white;
+}
+
+#clearTasks {
+    background: rgb(29, 152, 168);
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: grab;
+    gap: 10px; 
+    transition: background-color 0.3s ease;
+    justify-content: flex-start; 
+}
+
+.button-container {
+    display: flex;
+    gap: 5px; 
+}
+
+.completed {
+    text-decoration: line-through;
+    color: rgb(11, 127, 143);
+}
+
+.check-btn, .delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.check-btn {
+    color: rgb(12, 161, 12);
+}
+
+.delete-btn {
+    color: red;
+}
+
+.dark-mode {
+    background: #3a3a3a;
+    color: white;
+}
+
+.dark-mode .container {
+    background: #636262;
+}
+
+.dark-mode li {
+    background: #b6b3b3;
+}
+
+li[draggable="true"] {
+    user-select: none;
+}
+
+li:active {
+    opacity: 0.5;
+}
+
+body:not(.dark-mode) {
+    animation: changeBg 35s infinite alternate ease-in-out;
+}
+
+.task-checkbox {
+    width: 14px; 
+    height: 14px;
+}
+
+.task-content {
+    flex-grow: 1;
+    text-align: left;
+}
+
+li.checked-list {
+    background-color: rgb(166, 214, 229) !important;
+}
+
+#deleteSelected {
+    display: none;
+}
+
+.show-delete-selected {
+    display: inline-block;
+}
+
+.checked-list {
+    background-color: rgba(0, 128, 0, 0.1);
+}
+.task-list li {
+    transition: all 0.3s ease-in-out;
+}
+.sort-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.sort-buttons button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sort-buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.sort-buttons button:hover:not(:disabled) {
+    background-color: #518bce;
+}
+
+li.task-item {
+    transition: background-color 0.3s ease;
+}
+
+#taskList {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden; 
+}
+
+#taskList li {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#taskList li:hover {
+    background-color: #cceaf3;
+    border-radius: 10px;
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+body.dark-mode #taskList li:hover {
+    background-color: #444;
+}
+
+#taskList::-webkit-scrollbar {
+    display: none;
+}

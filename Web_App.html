@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TASKIFY - Task Manager</title>
+    <link rel="stylesheet" href="web.css">
+    <script src="web.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>TASKIFY</h1>
+        <h2>Task Manager</h2>
+        <button id="themeToggle">Toggle Dark Mode 🌙</button>
+        <input type="text" id="taskInput" placeholder="Enter a new task...">
+        <button id="addTask">Add Task</button>
+        <ul id="taskList"></ul>
+        <p>
+            Total Tasks: <span id="totalTasks">0</span> |
+            Completed: <span id="completedTasks">0</span> |
+            Deleted Tasks: <span id="deletedTasks">0</span> |
+            Updated Tasks: <span id="updatedTasks">0</span>
+        </p>
+        <button id="clearTasks">Delete All</button>
+        <button id="deleteSelected" class="show-delete-selected">Delete Selected</button>
+        <div class="sort-buttons">
+            <button id="sortAsc">Sort A-Z</button>
+            <button id="sortDesc">Sort Z-A</button>
+            <button id="resetOrder">Reset Order</button>
+        </div>
+    </div>
+    <template id="taskTemplate">
+        <li draggable="true">
+            <input type="checkbox" class="task-checkbox">
+            <span class="task-content"></span>
+            <div class="button-container">
+                <button class="check-btn">✔</button>
+                <button class="delete-btn">✖</button>
+            </div>
+        </li>
+    </template>
+</body>
+</html>
